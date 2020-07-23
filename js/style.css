@@ -1,0 +1,252 @@
+body {
+  width: 90%;
+  font-family: Raleway, sans serif;
+  margin-left: 40px;
+}
+
+/*Nav*/
+
+.m-nav__jsCheatSheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Monserrat, sans-serif;
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #f3e8ee;
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+.m-nav__jsCheatSheet a {
+  color: #01676b;
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 20;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #f3e8ee;
+  transition: 0.5s;
+}
+
+.m-nav__jsCheatSheet a:hover {
+  color: #ca2e55;
+}
+
+/*Titres*/
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Montserrat, sans serif;
+  margin-top: 20x;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 40px;
+  color: #01676b;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.a-title__js {
+  background-color: #ca2e55;
+  color: #f3e8ee;
+  padding: 10px;
+}
+
+.m-title__js {
+  height: 200px;
+  margin-top: 100px;
+  background-color: #f3e8ee;
+  width: 900px;
+}
+
+/*Bases Javascript*/
+
+.o-basesJavascript {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  flex-wrap: wrap;
+}
+
+.o-basesJavascript div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.a-basesJavascript {
+  margin-top: 20px;
+}
+.m-bases__where,
+.m-bases__output {
+  width: 50%;
+  margin-right: 50px;
+}
+
+.m-bases__comments,
+.m-bases__dom {
+  width: 45%;
+}
+
+/*Fetch*/
+
+#main-container {
+  border: dotted 1px black;
+  width: 50%;
+  padding: 10px;
+}
+
+#quotes {
+  font-style: italic;
+}
+
+#author {
+  font-weight: 700;
+}
+
+.o-fetch {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.o-fetch__quote {
+  width: 40%;
+}
+
+.o-fetch__get {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.o-fetch__post {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.o-fetch__postCode {
+  width: 50%;
+}
+
+.commentForm {
+  width: 50%;
+}
+
+.myCommentForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
+#submit-btn {
+  margin-top: 15px;
+  background-color: #01676b;
+  color: #dcf9e8;
+  font-weight: 700;
+  font-family: Raleway, sans serif;
+  width: 20%;
+}
+
+input,
+textarea {
+  background-color: #dcf9e8;
+  height: 30px;
+  margin: 10px;
+}
+
+textarea {
+  height: 80px;
+}
+
+.o-fetch__postCode {
+  width: 50%;
+}
+
+/*Fetch get*/
+
+.o-fetch__get {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+#o-fetch__getExemple {
+  width: 40%;
+}
+
+.o-fetch__getCode {
+  width: 50%;
+}
+
+.auteurForm,
+.commentForm {
+  background-color: bisque;
+}
+
+.auteurForm {
+  width: fit-content;
+}
+
+/*Listes*/
+
+ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+li {
+  line-height: 1.5em;
+}
+
+.m-operatorsList li:nth-child(even) {
+  background-color: #dcf9e8;
+  width: fit-content;
+}
+
+.m-methodsList li:nth-child(even) {
+  background-color: #dcf9e8;
+  width: fit-content;
+}
+
+.o-variablesList li {
+  font-weight: 700;
+}
+/*Codes*/
+
+pre {
+  white-space: pre-wrap;
+  color: #01676b;
+  font-weight: bold;
+}
+
+/*textes*/
+
+p {
+  line-height: 1.5em;
+  max-width: 70%;
+}
+
+.important {
+  background-color: #ca2e55;
+  color: white;
+  padding: 5px;
+}

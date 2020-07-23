@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Raleway:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>CSS Cheat Sheet</title>
+  </head>
+  <body onLoad="encodePreElements()">
+    <nav class="m-nav__cssCheatSheet">
+      <a href="#home">Home</a>
+      <a href="#o-basesCSS">Bases</a>
+      <a href="#o-selecteurs">Sélecteurs</a>
+      <a href="#o-fontsImages">Fonts & style</a>
+      <a href="#o-imagesBackgrounds">Images</a>
+      <a href="#o-positionnement">Positionnement</a>
+    </nav>
+    <div class="m-title__CSS">
+      <h1 id="home">
+        Cheat Sheet :
+        <span class="a-title__CSS">CSS</span>
+      </h1>
+    </div>
+    <div class="o-basesCSS">
+      <h2>Bases</h2>
+      <div class="m-anatomy">
+        <p>Anatomie d'une règle CSS</p>
+        <img src="css-anatomy-mdn.svg" alt="anatomie de base d'une règle CSS" />
+      </div>
+    </div>
+    <div id="o-selecteurs">
+      <h2>Sélecteurs</h2>
+      <p>
+        Nom de l'élément HTML sur lequel on veut appliquer la règle CSS. Pour en
+        sélectionner plusieurs qui regroupent les mêmes propriétés, on utilise
+        des ",".
+      </p>
+      <h3>Basiques</h3>
+      <p>
+        <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Selector_list">
+          Documentation MDN
+        </a>
+      </p>
+      <div class="o-selecteursBasiques">
+        <div class="m-selecteursTypes">
+          <h4>Sélecteur de type</h4>
+          <ul>
+            <li>div {}</li>
+            <li>span {}</li>
+            <li>p {}</li>
+            <li>a {}</li>
+            <li>table {}</li>
+            <li>etc.</li>
+          </ul>
+        </div>
+        <div class="m-selecteursCIA">
+          <h4>Sélecteur de classe, d'identifiant et d'attributs</h4>
+          <ul>
+            <li><pre>.important {}</pre></li>
+            <li><pre>#important {}</pre></li>
+            <li><pre>div .important {}</pre></li>
+            <li><pre>input[type="valeur"] {}</pre></li>
+            <li><pre>p #attribut * {}</pre></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="o-combinateurs">
+      <h3>Combinateurs</h3>
+      <ul>
+        <li>div + p {} permet de sélectionner les p qui suivent la div</li>
+        <li>
+          p ~ span {} permet de sélectionner les span qui ont le même parent
+        </li>
+        <li>
+          ul > li {} permet de sélectionner tous les li enfants directs de ul
+        </li>
+        <li>
+          div p {} permet de sélectionner tous les descendants p (pas
+          nécessairement directs) de div.
+        </li>
+        <li>
+          col || td {} permet de sélectionner n'importe quel élément td dans une
+          colonne col.
+        </li>
+      </ul>
+    </div>
+    <div class="o-elementsClasses">
+      <div class="o-elements">
+        <h3>Pseudo-éléments</h3>
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-%C3%A9l%C3%A9ments"
+        >
+          Documentation MDN
+        </a>
+        <p>
+          Permet de mettre en forme seulement certains éléments du sélecteur.
+        </p>
+        <p>
+          Syntaxe :
+          <span class="important">
+            sélecteur ::pseudo-élément {propriété : valeur};
+          </span>
+        </p>
+        <ul>
+          <li><pre>.class::after</pre></li>
+          <li><pre>#id::before</pre></li>
+          <li><pre>p::first-letter</pre></li>
+          <li><pre>p::first-line</pre></li>
+          <li><pre>::placeholder</pre></li>
+        </ul>
+      </div>
+      <div class="o-classes">
+        <h3>Pseudo-classes</h3>
+        <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes">
+          Documentation MDN
+        </a>
+        <p>
+          Permet de sélectionner les éléments selon l'état que l'on souhaite
+          attribuer (quand on passe la souris dessus par exemple).
+        </p>
+        <ul>
+          <li>
+            <pre>a:active</pre>
+            cible un lien lorsque celui-ci est activé par l'user
+          </li>
+          <li>
+            <pre>a:focus</pre>
+            cible un élément lorsque celui-ci reçoit le focus (champ d'un
+            formulaire)
+          </li>
+          <li>
+            <pre>a:hover</pre>
+            spécifie l'apparence d'un élément au moment où l'user le survole
+            avec le pointeur
+          </li>
+          <li>
+            <pre>a:link</pre>
+            modifie l'aspect d'un lien tant qu'il n'a pas été cliqué.
+          </li>
+          <li>
+            <pre>a:visited</pre>
+            modifie l'aspect d'un lien après que l'user l'a visité
+          </li>
+          <li>
+            <pre>:first-child</pre>
+            cible un élément qui est le premier élément enfant par rapport à son
+            élément parent
+          </li>
+          <li>
+            <pre>:first-of-type</pre>
+            cible le premier élément d'un type donné parmi ceux d'un même
+            élément parent (et de même niveau)
+          </li>
+          <li>
+            <pre>:last-child</pre>
+            cible un élément qui est le dernier enfant de son parent
+          </li>
+          <li>
+            <pre>:last-of-type</pre>
+            sélectionne le dernier élément qui apparaît
+          </li>
+          <li>
+            <pre>:nth-child(an+b)</pre>
+            sélectionne un élément par rapport à sa position dans un groupe
+            d'élément semblable (permet de rajouter even et odd)
+          </li>
+          <li>
+            <pre>:nth-last-child(an+b)</pre>
+            idem mais en partant de la fin
+          </li>
+          <li>
+            <pre>:nth-of-type (an+b)</pre>
+            correspond à des éléments d'un type donné, en fonction de leur
+            position au sein d'un groupe de frères et sœurs
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="o-fontsImages">
+      <div class="o-fontsStyle">
+        <h2 id="a-fontsStyle">Fonts & style</h2>
+        <p>
+          Propriétés des fonts sur la
+          <a href="https://developer.mozilla.org/fr/docs/Web/CSS/font">MDN</a>
+        </p>
+        <ul>
+          <li class="fontFamily">font-family : Montserrat, sans cursif,</li>
+          <li class="fontSize">font-size : 10</li>
+          <li class="letterSpacing">letter-spacing : 2px</li>
+          <li class="lineHeight">line-height : 25px</li>
+          <li>
+            font-style : normal /
+            <span class="italic">italic</span>
+            /
+            <span class="oblique">oblique</span>
+          </li>
+          <li>
+            font-weight :
+            <span class="bold">bold</span>
+            / normal
+          </li>
+          <li>
+            text-decoration :
+            <span class="underlined">underline</span>
+            / overline / dotted / line-through / ...
+          </li>
+          <li class="alignLeft">text-align : left</li>
+          <li class="alignRight">text-align : right</li>
+          <li class="alignCenter">text-align : center</li>
+          <li class="alignJustify">text-align : justify</li>
+          <li>
+            <span>
+              text-transform :
+              <span class="capitalize">capitalize</span>
+              /
+              <span class="uppercase">uppercase</span>
+              /
+              <span class="lowercase"></span>
+              lowercase
+            </span>
+          </li>
+          <li class="backgroundColor">background-color : pink</li>
+          <li class="border">border : 2px solid black</li>
+          <li class="borderRadius">Border-radius: 5px</li>
+          <li class="margin">margin : 20px</li>
+          <li class="padding">padding : 15px</li>
+        </ul>
+      </div>
+      <div class="o-images">
+        <h2 id="o-imagesBackgrounds">Images & Backgrounds</h2>
+        <ul>
+          <li><pre>width</pre></li>
+          <li><pre>height</pre></li>
+          <li><pre>background-image:("url")</pre></li>
+          <li>
+            <pre>
+background-repeat : repeat / no-repeat / repeat-x / repeat-y</pre
+            >
+          </li>
+          <li>
+            <pre>background-attachement: fixed / scroll (par défaut)</pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="o-positionnement">
+      <h2>Positionnement</h2>
+      <div class="o-floatDisplay">
+        <div class="o-float">
+          <h3>Float</h3>
+          <img src="float&clear.png" width="90%" />
+        </div>
+        <div class="o-display">
+          <h3>Display</h3>
+          <img src="CSS-Display.png" />
+        </div>
+      </div>
+      <div class="o-position">
+        <h3>Position</h3>
+        <img src="Explain-Absolute-Relative-Fixed.jpg" />
+      </div>
+      <div class="o-flexGrid">
+        <div class="o-flex">
+          <div class="m-flexBases">
+            <h3>Flexbox</h3>
+            <p>
+              Documentation
+              <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+                Flexbox
+              </a> et <a href="http://flexbox.buildwithreact.com/">online builder</a>
+            </p>
+            <img src="flexbox-cheatsheet.jpg" width="70%" />
+          </div>
+          <div class="m-flexPropriétés">
+            <p><strong>Propriétés</strong></p>
+            <ul>
+              <li>
+                <pre>
+flex-direction : row | row-reverse | column | column-reverse</pre
+                >
+              </li>
+              <li><pre>flex-wrap : wrap | no-wrap | wrap-reverse</pre></li>
+              <li><pre>flex-flow : flex-direction flex-wrap</pre></li>
+              <li>
+                <pre>
+justify-content (axe principal) : flex-start | flex-end | center | space-between | space-around | space-evenly</pre
+                >
+              </li>
+              <li>
+                <pre>
+align-items (axe secondaire) : flex-start | flex-end | center | baseline | stretch</pre
+                >
+              </li>
+              <li><pre>order (1 en bas, 10 au-dessus)</pre></li>
+              <li><pre>flex-grow : s’étire dans l’espace restant</pre></li>
+              <li><pre>flex-shrink : se contracte si nécessaire</pre></li>
+              <li>
+                <pre>
+flex-basis : taille initiale de l’élément avant que l’espace restant ne soit distribué</pre
+                >
+              </li>
+              <li><pre>flex : grow shrink basis</pre></li>
+            </ul>
+          </div>
+        </div>
+        <div class="o-grid">
+          <h3>Grid</h3>
+          <p>
+            Documentation
+            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">
+              Grid
+            </a> et <a href="https://grid.layoutit.com/">online builder</a>
+          </p>
+          <img src="grid-cheatsheet.jpg" width="70%" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

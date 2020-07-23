@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Javascript Cheat Sheet</title>
+  </head>
+  <body>
+    <header>
+      <nav class="m-nav__jsCheatSheet">
+        <a href="#bases">Bases</a>
+        <a href="#variables">Variables</a>
+        <a href="#functions">Fonctions</a>
+        <a href="#methods">Méthodes</a>
+        <a href="#conditions">Conditions</a>
+        <a href="#boucles">Boucles</a>
+      </nav>
+    </header>
+    <div class="m-title__js">
+      <h1>Cheat Sheet : <span class="a-title__js">Javascript</h1></span>
+    </div>
+
+      <div class="a-basesJavascript">
+        <h2 id="bases">Bases</h2>
+      </div>
+      <div class="o-basesJavascript">
+        <div class="m-bases__where">
+          <h3>Où placer le code Javascript</h3>
+          <ul>
+            <li>
+              Si le document script.js est une feuille à part, on va dans le document
+              HTML et on place la balise script src="" entre la balise fermante du
+              body et celle de l'html.
+            </li>
+            <li>
+              Si on veut mettre le script dans l'html, on met une balise script type
+              ="text/javascript" dans le document html.
+            </li>
+          </ul>
+        </div>
+      <div class="m-bases__comments">
+        <h3>Comments</h3>
+          <ul>
+            <li>
+              <pre>//</pre>
+              commentaire d'une ligne
+            </li>
+            <li>
+              <pre>/**/</pre>
+              commentaire de plusieurs lignes
+            </li>
+          </ul>
+      </div>
+      <div class="m-bases__output">
+        <h3>Output</h3>
+          <ul>
+            <li>
+              <pre>console.log()</pre>
+              afficher dans la console du navigateur
+            </li>
+            <li>
+              <pre>window.alert("résultat de ma fonction")</pre>
+              afficher une box alert, empêcher d'aller plus loin
+            </li>
+            <li>
+              <pre>if(window.confirm("Une nouvelle fenêtre va s'ouvrir")){
+                window.open("contact.html", "Vous êtes redirigé vers la page de contact");
+            }</pre>
+              afficher une boîte de dialogue (permet de construire une condition,
+              oui/non avec true/false)
+            </li>
+            <li>
+              <pre>window.prompt("What's your name ?", "Joéllie")</pre>
+              afficher une boîte de dialogue (permet de mettre une fonction à
+              l'intérieur)
+            </li>
+          </ul>
+      </div>
+      <div class="m-bases__dom">
+        <h3>DOM</h3>
+          <h4>Attributs</h4>
+            <ul>
+              <li><pre>.name</pre>retourne le nom de l'élément</li>
+              <li><pre>.value</pre>retourne la valeur de l'élément</li>
+              <li><pre>.lenght</pre>retourne la longueur de l'élément (tableau par exemple)</li>
+            </ul>
+      </div>
+      <div class="m-bases__delay">
+        <h3>Delay</h3>
+          <pre>setTimeOut(function(){}, 1000);</pre>délai d'une seconde (1000 milisecondes) avant d'enclencher une action </p>
+        </div>
+      </div>
+      </div>
+    <h2 id="variables">Variables</h2>
+    <p>Le nom d'une variable est unique et claire. On utilise le camelCase pour la définir. Le = assigne la variable à une valeur : une chaîne de caractères <span class="important">("")</span>, un nombre, un booléen (true/false), un array (tableau), un objet (avec des propriétés et des valeurs). </p>
+    <ul>
+      <li><pre>const myName = "Joéllie"</pre></li>
+      <p>déclarer une variable qui ne contiendra qu'une valeur qui ne pourra être accessible seulement si elle précédemment déclarée.</p>
+      <li><pre>let myAge = 29</pre></li>
+      <p>déclarer une variable, mais sans la contrainte d'assignation unique.</p>
+    </ul>
+    <h3>Types de variables</h3>
+    <ol class="o-variablesList">
+      <li>Chaine de caractères</li>
+        <p><pre>const firstName = "Joéllie";</pre>Pour mettre bout à bout deux chaînes de caractère pour en former une nouvelle, on concatène avec un <span class="important">+</span>. Si on souhaite mettre un espace entre, on utilise <span class="important">" "</span>.</p>
+      <li>Nombres</li>
+        <p><pre>let myNumber = 245;</pre>On peut faire des <a href="#o-operatorsBlock">opérations</a> sur les nombres.</p>
+      <li>Booléen</li>
+      <pre>let isConnected = new Boolean([valeur]);
+        if (isConnected) {window.alert("Hello you !")};
+          else{window.alert("Let's get connected !")};
+      </pre>
+      <li>Tableaux</li>
+      <pre>let myArray = ["Joéllie", "Natascha", "Yana", "Rachel", "Nathalie", "Julie"];
+        console.log(myArray);
+        console.log(myArray[2]);
+        console.log(myArray.lenght)
+      </pre>
+      <li>Objets</li>
+      <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux">MDN</a></p>
+      <pre>let myDog = {
+        nom: "Poupi",
+        age: 11,
+        race: "jack russel",
+        color: "white"
+      };
+      console.log(myDog.nom);</pre>
+    </ol>
+    <div class="o-operators">
+      <h3>Opérateurs</h3>
+        <ul class="m-operatorsList">
+          <li>+ addition</li>
+          <li>- soustraction</li>
+          <li>* multiplication</li>
+          <li>/ division</li>
+          <li>= affectation</li>
+          <li>% modulo</li>
+          <li>< plus petit que</li>
+          <li>> plus grand que</li>
+          <li>>= plus grand ou égal à</li>
+          <li><= plus petit ou égal à</li>
+          <li>++ incrémentation (+1)</li>
+          <li>-- décrémentation (-1)</li>
+          <li>|| ou</li>
+          <li>&& et</li>
+          <li>=== strictement égal à</li>
+          <li>== égal à</li>
+          <li>!== strictement différent de</li>
+          <li>!= différent de</li>
+          <li>+= affectation après addition</li>
+          <li>-= affectation après soustraction</li>
+          <li>/= affectation après division</li>
+          <li>*= affectation après multiplication</li>
+        </ul>
+    </div>
+      <h2 id="functions">Fonctions</h2>
+      <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions">MDN</a></p>
+      <p>Une fonction est un ensemble d'instructions menant à la réalisation d'une tâche, c'est un bloc de code réutilisable. Elle contient un constructeur <span class="important">()</span> qui peut recevoir un ou plusieurs paramètres <span class="important">(,)</span> et les instructions à executer englobées via <span class="important">{}</span>.</p>
+        <pre>(param1, param2, …) => {
+          return expression;
+        }</pre>
+        <p>On peut la déclarer via le mot-clé function ou via la <span class="important">fat arrow function</span>.</p>
+        <pre>([param] [, param]) => {
+          instructions
+       }
+       </pre>
+       <p>Une fonction sans paramètres</p>
+       <pre>() => {
+          instructions
+        }</pre>
+       Il ne faut pas oublier d'appeler la fonction</p>
+       <pre>nom()</pre>
+       <h2 id="methods">Méthodes</h2>
+       <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/D%C3%A9finition_de_m%C3%A9thode">MDN</a></p>
+       <p>Une fonction utilisée sur un objet est appéllé méthode.</p>
+         <ul class="m-methodsList">
+          <p class="important">Tableaux</p>
+            <li><pre>array.lenght</pre>indique le nombre d'éléments dans le tableau</li>
+            <li><pre>array.push()</pre>joute un ou plusieurs éléments à la fin d'un tableau et retourne la nouvelle taille du tableau</li>
+            <li><pre>array.pop</pre>supprime le dernier élément d'un tableau et retourne cet élément</li>
+            <li><pre>array.shift()</pre>retire le premier élément d'un tableau et renvoie cet élément</li>
+            <li><pre>array.map()</pre>crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant</li>
+          <p class="important">Document</p>
+            <li><pre>document.addEventListener</pre></li>
+            <li><pre>document.body</pre></li>
+            <li><pre>document.createElement("")</pre></li>
+            <li><pre>document.createTextNode("text")</pre></li>
+            <li><pre>document.getElementById("Id")</pre></li>
+            <li><pre>document.getElementByClassName("className");</pre></li>
+            <li><pre>document.getElementByTagName("p");</pre></li>
+            <li><pre>document.getElementByName("elementName");</pre></li>
+          <p class="important">Nombres</p>
+            <li><pre>Math.floor() renvoie un nombre entier qui est plus petit ou égal au nombre passé en paramètre </pre></li>
+            <li><pre>Math.random()</pre>renvoie un chiffre avec une décimale, compris entre 0 et le chiffre donné en paramètre</li>
+            <li><pre>Math.floor(Math.floor() * Math.random(nbr))</pre> renvoie un chiffre aléatoire entier</li>
+            <li><pre>parseInt("14", 10);</pre>(strings > nombre entier)</li>
+            <li><pre>parseFloat("3.14", 10);</pre>(strings > nombre décimal)</li>
+        </ul>
+          <h3>Méthode fetch()</h3>
+            <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch">MDN</a></p>
+            <div class="o-fetch">
+              <div class="o-fetch__quote">
+                <p class="important">Exemple exercice random quote</p>
+                <div id="main-container">
+                  <p id="quotes"></p>
+                  <p id="author"></p>
+                </div>
+              </div>
+              <div class="o-fetch__quoteCode">
+                <p class="important">Le code</p>
+                <pre>const getRandomQuotes = () => {
+                  let randomNumber = Math.floor(Math.random() * Math.floor(1643));
+                  fetch('https://type.fit/api/quotes')
+                    .then(response => {
+                      return response.json();
+                    })
+                    .then(response => {
+                      let data = response[randomNumber];
+                      document.getElementById('quotes').textContent = data.text;
+                      document.getElementById('author').textContent = data.author;
+                    });
+                };
+                getRandomQuotes();
+
+                function buttonListener() {
+                  document.getElementById('main-container').addEventListener('click', () => {
+                    getRandomQuotes();
+                  });
+                }
+                buttonListener();</pre>
+              </div>
+            </div>
+            <h4>fetch() POST</h4>
+              <p>La méthode suivante permet de poster les données encodées par un user sur un form (2 champs : "auteur" et "comment")</p>
+                <div class="o-fetch__post">
+                  <div class="myCommentForm">
+                    <p class="important">Formulaire</p>
+                    <form id="myForm">
+                      <div class="nameBox">
+                        <label for="auteur">Name</label>
+                      <input name="auteur" id="auteur">
+                      </div>
+                      <div class="comment-box">
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" id="comment"></textarea>
+                      </div>
+                    </form>
+                    <button id="submit-btn">Submit</button>
+                  </div>
+                <div class="o-fetch__postCode">
+                  <p class="important">Le code</p>
+                    <pre>let myHeaders = new Headers({ 'content-type': 'application/json' });
+                      document.getElementById('submit-btn').addEventListener('click', () => {
+                        let authorValue = document.getElementById('auteur').value; <!--on récupère les valeurs entrées dans les champs du formulaire-->
+                        let commentValue = document.getElementById('comment').value;
+                        <!--je récupère les valeurs de mes champs-->
+                        let body = {
+                          auteur: authorValue,
+                          comment: commentValue,
+                        }; <!--variable utile pour le body du post-->
+                        console.log(JSON.stringify(body)); <!--pour garder chaine de caractères en tant que clés-->
+                        fetch('https://quotes-light-api.herokuapp.com/api/comments/', {
+                          method: 'POST',
+                          headers: myHeaders,
+                          body: JSON.stringify(body),
+                        });
+                      });</pre>
+                  </div>
+              </div>
+            <h4>fetch() GET</h4>
+              <div class="o-fetch__get">
+                <p>Le code suivant permet de récupérer les données encodées sur un formulaire et les injectées dans une nouvelle div de contenu sur la page HTML.</p>
+                  <div id="o-fetch__getExemple">
+                    <p class="important">Les 10 premières nouvelles div</p>
+                  </div>
+                  <div class="o-fetch__getCode">
+                  <p class="important">Le code</p>
+                  <pre>let getComment = () => {
+                    fetch('https://quotes-light-api.herokuapp.com/api/comments/', {
+                      method: 'GET',
+                    })
+                      .then(response => {
+                        return response.json();
+                      })
+                      .then(response => {
+                        console.log(response);
+                        let data = response;
+                        firstTen = new Array();
+                        data.slice([0], [5]).map(item => {
+                          firstTen.push(item);
+                          console.log(firstTen);
+                        });
+                        firstTen.forEach(element => {
+
+                          let currentDiv = document.getElementById('o-fetch__getExemple');
+                          let newDivAuteur = document.createElement('div');
+                          let newDivComment = document.createElement('div');
+                          let newContentAuteur = document.createTextNode(element.auteur);
+                          let newContentComment = document.createTextNode(element.comment);
+                          newDivAuteur.appendChild(newContentAuteur);
+                          newDivComment.appendChild(newContentComment);
+                          currentDiv.appendChild(newDivAuteur);
+                          currentDiv.appendChild(newDivComment);
+                          newDivAuteur.setAttribute('class', 'auteurForm');
+                          newDivComment.setAttribute('class', 'commentForm');
+                        });
+                      });
+                  };
+                  getComment();</pre>
+                </div>
+              </div>
+            </div>
+      <h2 id="conditions">Conditions</h2>
+        <p>La documentation sur la <a href="">MDN</a></p>
+        <p>Les conditions utilisent les opérateurs de comparaison <span class="important">(<, >, <=, >=, ===, !==...)</span> et les opérateurs logiques <span class="important">(&&, ||, !)</span> pour aider à prendre une décision en fonction des paramètres qui  sont fournis.</p>
+        <pre>if(condition){instructions pour le code à exécuter};</pre>
+        <pre>const isMailSent = true ;
+          if (isMailSent){console.log("Mail sent to recipient")}
+        </pre>
+        <pre>if (false){console.log("Ce code ne fonctionnera pas")};
+          else {console.log("Mais ce code dans ce bloc fonctionnera");}
+        </pre>
+        <pre>if (season === "summer"){console.log("It's summer")}
+          else if (season === "fall"){console.log("It's fall")}
+          else if (season === "winter"){console.log("It's winter")}
+          else if (season === "spring"){console.log("It's spring")}
+          else {console.log("Invalid season")}
+        </pre>
+        <pre>let siriusTeamArray = ["Jeremy","Christophe","Julie","Laetitia","David","Vincent"];
+          switch (siriusTeamArray[0]) {
+            case "Jeremy":
+              console.log("Salut Jeremy")
+              break;
+            case "Christophe":
+              console.log("Salut Christophe")
+              break;
+          </pre>
+        <pre>is nightTime ? console.log("Turn on the lights") : console.log("Turn off the lights");</pre>
+      <h2 id="boucles">Boucles</h2>
+        <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Boucles_et_it%C3%A9ration">MDN</a></p>
+      <div class="o-boucles">
+        <div class="o-for">
+          <h3>for</h3>
+          <pre>const fizzBuzzArray = [];
+            for (let i = 0; i <= 100; i++) {
+              console.log(i);
+              fizzBuzzArray.push(i);
+            }
+            console.log(fizzBuzzArray);</pre>
+        </div>
+        <div class="o-doWhile">
+          <h3>do... while</h3>
+        </div>
+        <div class="o-while">
+          <h3>while</h3>
+        </div>
+        <div class="o-forEach">
+          <h3>forEach</h3>
+            <pre>fizzBuzzArray.forEach(element => {
+              if (element % 3 === 0 && element % 5 === 0) {
+                console.log('FizzBuzz');
+              } else if (element % 3 === 0) {
+                console.log('Fizz');
+              } else if (element % 5 === 0) {
+                console.log('Buzz');
+              } else {
+                console.log(element);
+              }
+            });</pre>
+        </div>
+
+      </div>
+  </body>
+  <script src="script.js"></script>
+</html>

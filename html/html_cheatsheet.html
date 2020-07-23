@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>HTML5 Cheat Sheet</title>
+  </head>
+  <body onLoad="encodePreElements()">
+    <nav class="m-nav_htmlCheatSheet">
+      <a href="#home">Home</a>
+      <a href="#structureBase">Base</a>
+      <a href="#balises">Balises</a>
+      <a href="#balisesTable">Tableaux</a>
+      <a href="#balisesForm">Formulaires</a>
+    </nav>
+    <div class="m-title__html">
+      <h1 id="home">Cheat Sheet : <span class="a-title__html">HTML5</span></h1>
+    </div>
+        <h2 id="structureBase">Structure de base d'une page web</h2>
+    </div>
+    <h3>Pour commencer</h3>
+      <table class="o-tableBases">
+        <tr class="m-table__header">
+          <th class="m-table__headerRow">Élément</th>
+          <th class="m-table__headerRow">Description</th>
+        </tr>
+        <tr>
+          <td><pre>!DOCTYPE html</pre></td>
+          <td>indiquer au navigateur quelle version d'HTML est utilisée sur la page</td>
+        </tr>
+        <tr>
+          <td><pre>html lang="en"</pre></td>
+          <td>balise principale, prend l'attribut langue de la page</td>
+        </tr>
+        <tr>
+          <td>head</td>
+          <td>en-tête du document contenant les métadonnées</td>
+        </tr>
+        <tr>
+          <td><pre>meta charset="UTF-8"</pre></td>
+          <td>balise méta pour les caractères utilisés</td>
+        </tr>
+        <tr>
+          <td><pre>meta name="viewport" content="width=device-width, initial-scale=1.0"<pre></td>
+          <td>zône visible de la page pour l'user</td>
+        </tr>
+        <tr>
+          <td><pre>link rel="stylesheet" href="style.css" type="text/css"</pre></td>
+          <td>relier la page CSS à l'html</td>
+        </tr>
+        <tr>
+          <td><pre><link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> </pre></td>
+          <td>ajoute une Google font au document HTML, on peut en ajouter d'autres en utilisant "&"</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>titre de la page qui apparait dans l'onglet du navigateur</td>
+        </tr>
+        <tr>
+          <td>body</td>
+          <td>corps de la page</td>
+        </tr>
+      </table>
+      <div class="o-balises">
+        <h3 id="a-balises">Balises</h3>
+          <div class="o-balisesSens">
+            <div class="o-balisesSens__nonSemantiques">
+              <h4>Non sémantiques</h4>
+                <ol>
+                  <li><pre><div></pre>conteneur générique pour diviser du contenu, on peut lui appliquer une "class" (.class en CSS) ou un id (# en CSS)
+                  </li>
+                  <li><pre><span></pre>conteneur générique inline pour les contenus phrasés</li>
+                </ol>
+            </div>
+            <div class="o-balises__semantiques">
+              <h4>Sémantiques</h4>
+                <ul>
+                  <li><pre><header></pre></li>
+                  <li><pre><nav></pre></li>
+                  <li><pre><main></pre></li>
+                  <li><pre><article></pre></li>
+                  <li><pre><section></pre></li>
+                  <li><pre><aside></pre></li>
+                  <li><pre><footer></pre></li>
+                </ul>
+            </div>
+              <div class="m-balisesSemantiques__image">
+                <img src="balises-semantiques.png" alt="balises sémantiques"></img>
+              </div>
+            </div>
+          </div>
+          <div class="o-balises__texte__images__listes">
+            <div class="o-balises__texte">
+              <h4>Balises pour le texte</h4>
+                <ul>
+                  <li><pre>h1 - h6</pre></li>
+                  <li><pre><p></pre></li>
+                  <li><pre><blockquote></pre></li>
+                  <li><pre><strong></strong></pre></li>
+                  <li><pre><em></em></pre></li>
+                  <li><pre><br></pre></li>
+                  <li><pre><a href=""></a></pre></li>
+                  <li><pre><a href="#"></a></pre></li>
+                </ul>
+            </div>
+            <div class="o-balises__images">
+              <h4>Images et vidéos</h4>
+                <ol class="important">
+                  <li>Images<pre><img src="" alt="" title="" width="" height=""></pre></li>
+                  <li>Vidéos<pre><video controls> <source src="" type="video/mp4"></video></pre></li>
+                </ol>
+            </div>
+            <div class="o-balises__listes">
+              <h4>Listes</h4>
+                <ol class="important">
+                  <li>Unordoned<pre><ul><li></li></ul></pre></li>
+                  <li>Ordoned<pre><ol><li></li></ol></pre></li>
+                </ol>
+            </div>
+          </div>
+      </div>
+      <div class="o-table">
+        <div class="m-tableExemple">
+          <h3 id="balisesTable">Tableaux</h3>
+            <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/table">MDN</a></p>
+            <table>
+              <tr>
+                <th>En-tête 1</th>
+                <th>En-tête 2</th>
+              </tr>
+              <tr>
+                <td>cellule 1 ligne 1</td>
+                <td>cellule 2 ligne 1</td>
+              </tr>
+              <tr>
+                <td>cellule 3 ligne 2</td>
+                <td>cellule 4 ligne 2</td>
+              </tr>
+            </table>
+          </div>
+          <div class="m-tableExemple__code">
+            <p class="important">Code</p>
+            <pre>
+              <table>
+                <tr>
+                  <th>en-tête 1</th>
+                  <th>en-tête 2</th>
+                </tr>
+                <tr>
+                  <td>cellule 1 ligne 1</td>
+                  <td>cellule 2 ligne 1</td>
+                </tr>
+                <tr>
+                  <td>cellule 3 ligne 2</td>
+                  <td>cellule 4 ligne 2</td>
+                </tr>
+              </table>
+            </pre>
+          </div>
+        </div>
+        <div id="balisesForm">
+          <div class="o-balisesForm">
+            <h3>Formulaires</h3>
+              <p>La documentation sur la <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Form">MDN</a></p>
+            <div class="o-formExemple">
+              <form method="POST">
+                <div class="m-formExemple__name">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" required>
+                </div>
+                <div class="m-formExemple__email">
+                  <label for="email">E-mail</label>
+                  <input type="email" name="email" id="name" required>
+                </div>
+                <div class="m-formExemple__comment">
+                  <label for="comment">Comment</label>
+                  <textarea name="comment" id="comment" rows="5" cols="15" required></textarea>
+                </div>
+                <div class="m-formExemple__btn">
+                  <button name="submit-btn">Comment</button>
+                </div>
+              </form>
+            </div>
+          </div>
+            <div class="o-formExemple-code">
+              <p>Le code du formulaire</p>
+              <pre>
+                <div class="o-formExemple">
+                  <form method="POST">
+                    <div class="m-formExemple__name">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="m-formExemple__email">
+                      <label for="email">E-mail</label>
+                      <input type="email" name="email" id="name" required>
+                    </div>
+                    <div class="m-formExemple__comment">
+                      <label for="comment">Comment</label>
+                      <textarea name="comment" id="comment" rows="5" cols="15" required></textarea>
+                    </div>
+                    <div class="m-formExemple__btn">
+                      <button name="submit-btn">Comment</button>
+                    </div>
+                  </form>
+                </div>
+              </pre>
+            </div>
+          </div>
+        </div>
+  </body>
+  <script src="script.js"></script>
+</html>
